@@ -3,20 +3,20 @@
 }
 
 body {
+   width: 100%;
    background-color: #edeff2;
    font-family: "Calibri", "Roboto", sans-serif;
 }
 
 .chat_window {
-   position: absolute;
-   width: calc(100% - 20px);
-   max-width: 800px;
-   height: 500px;
+   
+   width: 100vw;
+   
+   height: 100vh;
    border-radius: 10px;
    background-color: #fff;
-   left: 50%;
-   top: 50%;
-   transform: translateX(-50%) translateY(-50%);
+   left:0;
+   top: 0;
    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
    background-color: #f8f8f8;
    overflow: hidden;
@@ -27,6 +27,7 @@ body {
    width: 100%;
    padding: 20px 0 15px;
    box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+   transition: 200ms ease-in-out;
 }
 .top_menu .buttons {
    margin: 3px 0 0 20px;
@@ -57,8 +58,9 @@ body {
    list-style: none;
    padding: 20px 10px 0 10px;
    margin: 0;
-   height: 347px;
+   height: calc(100vh - 153.38px);
    overflow: auto;
+   transition: 200ms ease-in-out;
    
 }
 .messages .message {
@@ -146,16 +148,16 @@ body {
    display: flex;
    width: 100%;
    background-color: #fff;
-   padding: 20px 20px;
+   padding: 1.2rem;
    bottom: 0;
-   justify-content: space-between;
+   justify-content: space-between !important;
+   transition: 200ms ease-in-out;
 }
 .bottom_wrapper .message_input_wrapper,.bottom_wrapper .dark_mode_message_input_wrapper{
-   display: inline-block;
    height: 50px;
    border-radius: 25px;
    border: 2px solid #bcbdc0;
-   width: calc(100% - 160px);
+   flex-basis:80%;
    position: relative;
    padding: 0 20px;
 }
@@ -169,9 +171,9 @@ body {
    color: gray;
 }
 .bottom_wrapper .send_message {
-   width: 140px;
    height: 50px;
-   display: inline-block;
+   flex-basis:15%;
+   min-width: 90px;
    border-radius: 50px;
    background-color: #a3d063;
    border: 2px solid #a3d063;
@@ -179,7 +181,7 @@ body {
    cursor: pointer;
    transition: all 0.2s linear;
    text-align: center;
-   float: right;
+   margin-left: auto;
 }
 .bottom_wrapper .send_message:hover {
    color: #a3d063;
@@ -237,6 +239,7 @@ body {
 }
 .dark_mode_message_input::placeholder{
    color: #f2e6ff !important;
+   transition: 200ms ease-in-out;
 }
 
 #dark_mode_btn{
@@ -245,7 +248,9 @@ body {
 }
 .dark_mode{
    background-color: #373747 !important;
+   transition: 200ms ease-in-out;
 }
 .dark_mode_messages{
    background-color: #494064 !important;
+   transition: 200ms ease-in-out;
 }
