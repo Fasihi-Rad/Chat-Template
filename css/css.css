@@ -235,7 +235,7 @@ body {
 .message_input{
    background-color:transparent !important;
 }
-.dark_mod_message_input::placeholder{
+.dark_mode_message_input::placeholder{
    color: #f2e6ff !important;
 }
 
