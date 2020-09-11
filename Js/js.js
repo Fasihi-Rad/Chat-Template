@@ -10,6 +10,15 @@
                .addClass(_this.message_side)
                .find(".text")
                .html(_this.text);
+            $message
+               .find(".timestape")
+               .html('1111111');
+            $message
+               .find(".username")
+               .html('Ali');
+            $message
+               .find(".user_role")
+               .html('Admin');
             $(".messages").append($message);
             return setTimeout(function () {
                return $message.addClass("appeared");
@@ -33,7 +42,7 @@
          }
          $(".message_input").val("");
          $messages = $(".messages");
-         message_side = message_side === "left" ? "right" : "left";
+         message_side = "right";
          message = new Message({
             text: text,
             message_side: message_side,
@@ -44,6 +53,28 @@
             300
          );
       };
+
+
+      getMessage = function (text) {    ///get message form api
+         var $messages, message;
+         if (text.trim() === "") {
+            return;
+         }
+         $(".message_input").val("");
+         $messages = $(".messages");
+         message_side = "left";
+         message = new Message({
+            text: text,
+            message_side: message_side,
+         });
+         message.draw();
+         return $messages.animate(
+            { scrollTop: $messages.prop("scrollHeight") },
+            300
+         );
+      };
+
+
       $(".send_message").click(function (e) {
          return sendMessage(getMessageText());
       });
