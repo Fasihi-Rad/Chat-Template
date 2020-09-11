@@ -86,3 +86,40 @@
       
    });
 }.call(this));
+
+
+
+$(document).ready(function(){
+   var darkMod = false;
+   $(document).on ("click", ".dark_mode_btn", function () {
+      if(darkMod === false){
+         $("#dark_mode_btn").css({'color':'white'})
+         $(".top_menu").addClass("dark_mode");
+         $(".bottom_wrapper").addClass("dark_mode");
+         $(".messages").addClass("dark_mode_messages");
+         $("#dark_mode_btn").removeClass("fa-moon");
+         $("#dark_mode_btn").addClass("fa-sun");
+         $(".message_input_wrapper").addClass("dark_mode_message_input_wrapper");
+         $(".dark_mod_message_input_wrapper").removeClass("message_input_wrapper");
+         $(".message_input").css({'color':'#f2e6ff'});
+         $(".message_input").addClass('dark_mode_message_input');
+         // alert("Dark Mod Activated");
+         darkMod = true;
+      }
+      else if(darkMod === true){
+         $("#dark_mode_btn").css({'color':'#65598A'})
+         $(".top_menu").removeClass("dark_mode");
+         $(".bottom_wrapper").removeClass("dark_mode");
+         $(".messages").removeClass("dark_mode_messages");
+         $("#dark_mode_btn").removeClass("fa-sun");
+         $("#dark_mode_btn").addClass("fa-moon");
+         $(".dark_mod_message_input_wrapper").addClass("message_input_wrapper");
+         $(".message_input_wrapper").removeClass("dark_mode_message_input_wrapper");
+         $(".message_input").css({'color':'gray'});
+         $(".message_input").removeClass('dark_mode_message_input');
+         
+         darkMod = false;
+      }
+      
+  });
+ });

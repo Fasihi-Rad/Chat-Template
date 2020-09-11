@@ -33,8 +33,8 @@ body {
    position: absolute;
 }
 .top_menu .buttons .button {
-   width: 16px;
-   height: 16px;
+   width: auto;
+   height: auto;
    border-radius: 50%;
    display: inline-block;
    margin-right: 10px;
@@ -42,9 +42,6 @@ body {
 }
 .top_menu .buttons .button.close {
    background-color: #f5886e;
-}
-.top_menu .buttons .button.minimize {
-   background-color: #fdbf68;
 }
 .top_menu .buttons .button.maximize {
    background-color: #a3d063;
@@ -115,7 +112,7 @@ body {
 }
 .messages .message .text_wrapper {
    display: inline-block;
-   padding: 20px;
+   padding: .7rem .9rem;
    border-radius: 6px;
    width: calc(100% - 85px);
    min-width: 100px;
@@ -146,23 +143,23 @@ body {
 }
 
 .bottom_wrapper {
-   position: relative;
+   display: flex;
    width: 100%;
    background-color: #fff;
    padding: 20px 20px;
-   position: absolute;
    bottom: 0;
+   justify-content: space-between;
 }
-.bottom_wrapper .message_input_wrapper {
+.bottom_wrapper .message_input_wrapper,.bottom_wrapper .dark_mode_message_input_wrapper{
    display: inline-block;
    height: 50px;
    border-radius: 25px;
-   border: 1px solid #bcbdc0;
+   border: 2px solid #bcbdc0;
    width: calc(100% - 160px);
    position: relative;
    padding: 0 20px;
 }
-.bottom_wrapper .message_input_wrapper .message_input {
+.bottom_wrapper .message_input_wrapper .message_input,.bottom_wrapper .dark_mode_message_input_wrapper .message_input{
    border: none;
    height: 100%;
    box-sizing: border-box;
@@ -201,4 +198,54 @@ body {
 .text_wrapper_header{
    display: flex;
    justify-content: space-between;
+}
+.username{
+   color: #0a0ae7;
+   font-size: .9rem;
+}
+.user_role{
+   color: #858585;
+   font-size: .7rem;
+}
+.timestape{
+   color: #858585;
+   font-size: .7rem;
+   margin-top:.5rem;
+}
+.text_wrapper .text{
+   margin: .4rem .3rem;
+}
+.message_input_wrapper{
+   border-color: #417aff !important;
+   background-color: #f8f8f8;
+   transition: 200ms ease-in-out;
+}
+.dark_mode_message_input_wrapper{
+   border-color: #417aff !important;
+   background-color: #5a447e !important;
+   transition: 200ms ease-in-out;
+}
+.message_input_wrapper:hover{
+   box-shadow:0 0 7px 3px rgba(0,0,0, 0.13);
+   background-color: rgb(250, 243, 255);
+}
+.dark_mode_message_input_wrapper:hover{
+   box-shadow:0 0 9px 5px rgba(196, 112, 255, 0.2);
+}
+.message_input{
+   background-color:transparent !important;
+}
+.dark_mod_message_input::placeholder{
+   color: #f2e6ff !important;
+}
+
+#dark_mode_btn{
+   font-size:1.5rem;
+   color:#65598A;
+}
+.dark_mode{
+   background-color: #373747 !important;
+}
+.dark_mode_messages{
+   background-color: #494064 !important;
 }
