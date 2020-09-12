@@ -9,13 +9,12 @@ body {
 }
 
 .chat_window {
-   
    width: 100vw;
-   
+
    height: 100vh;
    border-radius: 10px;
    background-color: #fff;
-   left:0;
+   left: 0;
    top: 0;
    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
    background-color: #f8f8f8;
@@ -61,7 +60,6 @@ body {
    height: calc(100vh - 153.38px);
    overflow: auto;
    transition: 200ms ease-in-out;
-   
 }
 .messages .message {
    clear: both;
@@ -78,13 +76,24 @@ body {
    background-color: #ffe6cb;
    margin-left: 20px;
 }
+.messages .dark_mode_message.left .text_wrapper {
+   background-color: #ff5aa7 !important;
+}
+
 .messages .message.left .text_wrapper::after,
 .messages .message.left .text_wrapper::before {
    right: 100%;
    border-right-color: #ffe6cb;
 }
+.messages .dark_mode_message.left .text_wrapper::after,
+.messages .dark_mode_message.left .text_wrapper::before {
+   border-right-color: #ff5aa7 !important;
+}
 .messages .message.left .text {
    color: #c48843;
+}
+.messages .dark_mode_message.left .text {
+   color: #ffffff;
 }
 .messages .message.right .avatar {
    background-color: #fdbf68;
@@ -95,13 +104,23 @@ body {
    margin-right: 20px;
    float: right;
 }
+.messages .dark_mode_message.right .text_wrapper {
+   background-color: #55a4ff !important;
+}
 .messages .message.right .text_wrapper::after,
 .messages .message.right .text_wrapper::before {
    left: 100%;
    border-left-color: #c7eafc;
 }
+.messages .dark_mode_message.right .text_wrapper::after,
+.messages .dark_mode_message.right .text_wrapper::before {
+   border-left-color: #55a4ff !important;
+}
 .messages .message.right .text {
    color: #45829b;
+}
+.messages .dark_mode_message.right .text {
+   color: #ffffff !important;
 }
 .messages .message.appeared {
    opacity: 1;
@@ -114,7 +133,7 @@ body {
 }
 .messages .message .text_wrapper {
    display: inline-block;
-   padding: .7rem .9rem;
+   padding: 0.7rem 0.9rem;
    border-radius: 6px;
    width: calc(100% - 85px);
    min-width: 100px;
@@ -140,7 +159,7 @@ body {
    margin-top: -2px;
 }
 .messages .message .text_wrapper .text {
-   font-size: 18px;
+   font-size: 1.1rem;
    font-weight: 300;
 }
 
@@ -153,15 +172,17 @@ body {
    justify-content: space-between !important;
    transition: 200ms ease-in-out;
 }
-.bottom_wrapper .message_input_wrapper,.bottom_wrapper .dark_mode_message_input_wrapper{
+.bottom_wrapper .message_input_wrapper,
+.bottom_wrapper .dark_mode_message_input_wrapper {
    height: 50px;
    border-radius: 25px;
    border: 2px solid #bcbdc0;
-   flex-basis:80%;
+   flex-basis: 80%;
    position: relative;
    padding: 0 20px;
 }
-.bottom_wrapper .message_input_wrapper .message_input,.bottom_wrapper .dark_mode_message_input_wrapper .message_input{
+.bottom_wrapper .message_input_wrapper .message_input,
+.bottom_wrapper .dark_mode_message_input_wrapper .message_input {
    border: none;
    height: 100%;
    box-sizing: border-box;
@@ -172,7 +193,7 @@ body {
 }
 .bottom_wrapper .send_message {
    height: 50px;
-   flex-basis:15%;
+   flex-basis: 15%;
    min-width: 90px;
    border-radius: 50px;
    background-color: #a3d063;
@@ -184,7 +205,7 @@ body {
    margin-left: auto;
 }
 .bottom_wrapper .send_message:hover {
-   color: #a3d063;
+   color: #9dca5e;
    background-color: #fff;
 }
 .bottom_wrapper .send_message .text {
@@ -197,60 +218,76 @@ body {
 .message_template {
    display: none;
 }
-.text_wrapper_header{
+.text_wrapper_header {
    display: flex;
    justify-content: space-between;
 }
-.username{
+.left .text_wrapper_header {
+   flex-direction: row-reverse;
+}
+.message .text_wrapper .text_wrapper_header .username {
    color: #0a0ae7;
-   font-size: .9rem;
+   font-size: 0.85rem;
 }
-.user_role{
+.message .text_wrapper .text_wrapper_header .user_role {
    color: #858585;
-   font-size: .7rem;
+   font-size: 0.6rem;
 }
-.timestape{
+.message .text_wrapper .timestape {
    color: #858585;
-   font-size: .7rem;
-   margin-top:.5rem;
+   font-size: 0.51rem;
+   margin-top: 0.5rem;
+   display: flex;
 }
-.text_wrapper .text{
-   margin: .4rem .3rem;
+.left .text_wrapper .timestape {
+   flex-direction: row-reverse;
 }
-.message_input_wrapper{
+.dark_mode_message .text_wrapper .text_wrapper_header .username {
+   color: #ffffff !important;
+}
+.dark_mode_message .text_wrapper .text_wrapper_header .user_role {
+   color: #eeeeee !important;
+}
+.dark_mode_message .text_wrapper .timestape {
+   color: #eeeeee !important;
+}
+.text_wrapper .text {
+   margin: 0.4rem 0.3rem;
+}
+.message_input_wrapper {
    border-color: #417aff !important;
    background-color: #f8f8f8;
    transition: 200ms ease-in-out;
 }
-.dark_mode_message_input_wrapper{
+.dark_mode_message_input_wrapper {
    border-color: #417aff !important;
    background-color: #5a447e !important;
    transition: 200ms ease-in-out;
 }
-.message_input_wrapper:hover{
-   box-shadow:0 0 7px 3px rgba(0,0,0, 0.13);
+.message_input_wrapper:hover {
+   box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.13);
    background-color: rgb(250, 243, 255);
 }
-.dark_mode_message_input_wrapper:hover{
-   box-shadow:0 0 9px 5px rgba(196, 112, 255, 0.2);
+.dark_mode_message_input_wrapper:hover {
+   box-shadow: 0 0 9px 5px rgba(196, 112, 255, 0.2);
 }
-.message_input{
-   background-color:transparent !important;
+.message_input {
+   background-color: transparent !important;
 }
-.dark_mode_message_input::placeholder{
+.dark_mode_message_input::placeholder {
    color: #f2e6ff !important;
    transition: 200ms ease-in-out;
 }
 
-#dark_mode_btn{
-   font-size:1.5rem;
-   color:#65598A;
+#dark_mode_btn {
+   font-size: 1.5rem;
+   color: #65598a;
 }
-.dark_mode{
+.dark_mode {
    background-color: #373747 !important;
    transition: 200ms ease-in-out;
 }
-.dark_mode_messages{
+.dark_mode_messages {
    background-color: #494064 !important;
    transition: 200ms ease-in-out;
 }

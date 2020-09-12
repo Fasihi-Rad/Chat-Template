@@ -10,15 +10,9 @@
                .addClass(_this.message_side)
                .find(".text")
                .html(_this.text);
-            $message
-               .find(".timestape")
-               .html('1111111');
-            $message
-               .find(".username")
-               .html('Ali');
-            $message
-               .find(".user_role")
-               .html('Admin');
+            $message.find(".timestape").html("1111111");
+            $message.find(".username").html("Ali");
+            $message.find(".user_role").html("Admin");
             $(".messages").append($message);
             return setTimeout(function () {
                return $message.addClass("appeared");
@@ -54,8 +48,8 @@
          );
       };
 
-
-      getMessage = function (text) {    ///get message form api
+      getMessage = function (text) {
+         ///get message form api
          var $messages, message;
          if (text.trim() === "") {
             return;
@@ -74,7 +68,6 @@
          );
       };
 
-
       $(".send_message").click(function (e) {
          return sendMessage(getMessageText());
       });
@@ -83,55 +76,58 @@
             return sendMessage(getMessageText());
          }
       });
-      
    });
 }.call(this));
 
-
-
-$(document).ready(function(){
+$(document).ready(function () {
    var darkMod = true;
-         $("#dark_mode_btn").css({'color':'white'})
+   $("#dark_mode_btn").css({ color: "white" });
+   $(".top_menu").addClass("dark_mode");
+   $(".bottom_wrapper").addClass("dark_mode");
+   $(".messages").addClass("dark_mode_messages");
+   $("#dark_mode_btn").removeClass("fa-moon");
+   $("#dark_mode_btn").addClass("fa-sun");
+   $(".message_input_wrapper").addClass("dark_mode_message_input_wrapper");
+   $(".dark_mod_message_input_wrapper").removeClass("message_input_wrapper");
+   $(".message_input").css({ color: "#f2e6ff" });
+   $(".message_input").addClass("dark_mode_message_input");
+   $(".message").addClass("dark_mode_message");
+
+   $(document).on("click", ".dark_mode_btn", function () {
+      if (darkMod === false) {
+         $("#dark_mode_btn").css({ color: "white" });
          $(".top_menu").addClass("dark_mode");
          $(".bottom_wrapper").addClass("dark_mode");
          $(".messages").addClass("dark_mode_messages");
          $("#dark_mode_btn").removeClass("fa-moon");
          $("#dark_mode_btn").addClass("fa-sun");
-         $(".message_input_wrapper").addClass("dark_mode_message_input_wrapper");
-         $(".dark_mod_message_input_wrapper").removeClass("message_input_wrapper");
-         $(".message_input").css({'color':'#f2e6ff'});
-         $(".message_input").addClass('dark_mode_message_input');
-
-
-   $(document).on ("click", ".dark_mode_btn", function () {
-      if(darkMod === false){
-         $("#dark_mode_btn").css({'color':'white'})
-         $(".top_menu").addClass("dark_mode");
-         $(".bottom_wrapper").addClass("dark_mode");
-         $(".messages").addClass("dark_mode_messages");
-         $("#dark_mode_btn").removeClass("fa-moon");
-         $("#dark_mode_btn").addClass("fa-sun");
-         $(".message_input_wrapper").addClass("dark_mode_message_input_wrapper");
-         $(".dark_mod_message_input_wrapper").removeClass("message_input_wrapper");
-         $(".message_input").css({'color':'#f2e6ff'});
-         $(".message_input").addClass('dark_mode_message_input');
+         $(".message_input_wrapper").addClass(
+            "dark_mode_message_input_wrapper"
+         );
+         $(".dark_mod_message_input_wrapper").removeClass(
+            "message_input_wrapper"
+         );
+         $(".message_input").css({ color: "#f2e6ff" });
+         $(".message_input").addClass("dark_mode_message_input");
+         $(".message").addClass("dark_mode_message");
          alert("Dark Mod Activated");
          darkMod = true;
-      }
-      else if(darkMod === true){
-         $("#dark_mode_btn").css({'color':'#65598A'})
+      } else if (darkMod === true) {
+         $("#dark_mode_btn").css({ color: "#65598A" });
          $(".top_menu").removeClass("dark_mode");
          $(".bottom_wrapper").removeClass("dark_mode");
          $(".messages").removeClass("dark_mode_messages");
          $("#dark_mode_btn").removeClass("fa-sun");
          $("#dark_mode_btn").addClass("fa-moon");
          $(".dark_mod_message_input_wrapper").addClass("message_input_wrapper");
-         $(".message_input_wrapper").removeClass("dark_mode_message_input_wrapper");
-         $(".message_input").css({'color':'gray'});
-         $(".message_input").removeClass('dark_mode_message_input');
+         $(".message_input_wrapper").removeClass(
+            "dark_mode_message_input_wrapper"
+         );
+         $(".message_input").css({ color: "gray" });
+         $(".message_input").removeClass("dark_mode_message_input");
          alert("Light Mod Activated");
+         $(".message").removeClass("dark_mode_message");
          darkMod = false;
       }
-      
-  });
+   });
 });
