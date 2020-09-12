@@ -16,6 +16,7 @@
    -webkit-box-pack: center;
    -ms-flex-pack: center;
    justify-content: center;
+
 }
 
 /* helpers/grid.css */
@@ -72,7 +73,7 @@ html {
 }
 
 body {
-   background-color: #2c3338;
+   background-color: #c5c5c5;
    color: #606468;
    font-family: "Open Sans", sans-serif;
    font-size: 14px;
@@ -202,4 +203,11 @@ p {
 
 .text--center {
    text-align: center;
+}
+
+.login_card{
+    padding: 5rem 2rem;
+    border-radius: 13px;
+    background-color: #2c3338;
+    box-shadow: 0 0 64px 10px rgba(0,0,0,0.6);
 }

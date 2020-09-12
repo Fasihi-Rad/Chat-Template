@@ -73,7 +73,8 @@
       });
       $(".message_input").keyup(function (e) {
          if (e.which === 13) {
-            return sendMessage(getMessageText());
+            // return sendMessage(getMessageText());
+            return userMaker()
          }
       });
    });
@@ -136,6 +137,13 @@ $(document).ready(function () {
    });
 });
 
+userMaker = function(){
+   var $user ;
+   var $users = $('.users')
+   $user = $($(".user_template").clone().html());
+   $(".users").append($user); 
+   return $user.addClass("appeared")
+}
 
 $(window).resize(function() {
    var width = $(window).width();

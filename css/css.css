@@ -3,6 +3,8 @@
 }
 
 body {
+   display: flex;
+   flex-direction: row-reverse;
    position: fixed;
    width: 100%;
    background-color: #edeff2;
@@ -10,10 +12,10 @@ body {
 }
 
 .chat_window {
-   width: 100vw;
+   flex-basis: 85vw;
    height: 100vh;
-   border-radius: 10px;
-   background-color: #fff;
+   border-top-right-radius: 10px ;
+   border-bottom-right-radius: 10px;
    left: 0;
    top: 0;
    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
@@ -171,6 +173,7 @@ body {
    bottom: 0;
    justify-content: space-between !important;
    transition: 200ms ease-in-out;
+   box-shadow: 0 -1px 30px rgba(0, 0, 0, 0.1);
 }
 .bottom_wrapper .message_input_wrapper,
 .bottom_wrapper .dark_mode_message_input_wrapper {
@@ -328,4 +331,105 @@ body {
 }
 .system_message::after {
    margin: 0 .4em;
+}
+
+
+.users_tab{
+   display: flex ;
+   flex-direction: column;
+   flex-basis: 20%;
+   border-top-left-radius: 10px ;
+   border-bottom-left-radius: 10px;
+   background-color: #f8f8f8;
+   overflow: hidden;
+}
+.field{
+   
+   padding: 20px 0 15px;
+   width: 100%;
+   height: 65px;
+   background-color: #cee6f5;
+}
+.down.field{
+   height: 88.38px !important;
+   padding: 1.2rem !important;
+   box-shadow: 0 -1px 30px rgba(0, 0, 0, 0.1);
+  
+}
+.top.field{
+   box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+   align-self: start; 
+}
+
+.top.field{
+   box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+   text-align: center;
+   color: #ffffff;
+}
+
+.users{
+   flex-direction: column;
+   padding: 0;
+   height: calc(100vh - 153.38px);
+   overflow:auto;
+   list-style: none;
+   position: relative;
+   margin: 0;
+   direction: rtl;
+}
+.user{
+   display: flex;
+   background-color:rgb(228, 221, 235);
+   padding: 1rem;
+   margin: .3rem;
+   border-radius: 12px;
+   overflow: hidden;
+   direction: ltr;
+   
+}
+.user:hover{
+   
+}
+
+.avatar_filde{
+   margin: auto;
+   flex-basis:20%;
+}
+.avatar{
+   width: 60px;
+   height: 60px;
+   border-radius: 50%;
+   background-color: #fdbf68;
+   float: left;
+   
+}
+.user_info{
+   display: flex;
+   flex-direction: column;
+   margin: auto 0;
+   margin-left: 1rem !important;
+   flex-basis:80%;
+}
+.user_info_head{
+   display: flex;
+   justify-content: space-between !important;
+   margin-bottom: .5rem;
+}
+.user_online_status{
+   background-color: brown;
+   padding: .2rem .5rem;
+   border-radius: 6px;
+   font-size: .8rem;
+   color: white;
+   margin-left: auto;
+   align-self: end !important;
+}
+.user_info_head .username{
+   
+}
+.user_info .user_last_seen{
+   margin: 0;
+}
+.user_template{
+   display: none;
 }

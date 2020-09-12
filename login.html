@@ -10,6 +10,7 @@
 
 <body class="align">
 
+    <div class='login_card'>
     <div class="grid">
 
         <form action="https://httpbin.org/post" method="POST" class="form login">
@@ -31,15 +32,16 @@
             </div>
 
             <div class="form__field">
-                <input type="submit" value="Sign In">
+                <input id='login_btn' type="submit" value="Login In">
             </div>
 
         </form>
 
-        <p class="text--center">Not a member? <a href="#">Sign up now</a> <svg class="icon">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/images/icons.svg#arrow-right"></use>
+        <p class="text--center">Not a Member ? <a href="#"> Sign up now</a> <svg class="icon">
+                
             </svg></p>
 
+    </div>
     </div>
 
     <svg xmlns="http://www.w3.org/2000/svg" class="icons">
@@ -57,7 +59,7 @@
         </symbol>
     </svg>
 
-
+    <script type="text/javascript" src="./Js/jQuery/jquery.min.js"></script>
     <script type="text/javascript" src='./Js/login.js'></script>
 </body>
 </html>
