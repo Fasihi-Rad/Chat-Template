@@ -291,3 +291,11 @@ body {
    background-color: #494064 !important;
    transition: 200ms ease-in-out;
 }
+@media(max-width: 500px){
+   .bottom_wrapper .send_message{
+      flex-basis: 10%;
+      min-width: 50px ;
+      border-radius: 50%;
+   }
+
+}

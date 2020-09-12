@@ -131,3 +131,14 @@ $(document).ready(function () {
       }
    });
 });
+
+
+$(window).resize(function() {
+   var width = $(window).width();
+   if (width < 501){
+      $('#send_btn_txt').hide()
+   }
+   else{
+      $('#send_btn_txt').show()
+   }
+ });
