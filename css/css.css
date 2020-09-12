@@ -310,12 +310,18 @@ body {
    text-align: center;
    color: gray;
    font-size: .9rem;
-   
+   margin: .8rem 0;
+}
+.dark_mode_system_message{
+   color: white !important;
 }
 .system_message::before, .system_message::after {
    content: '';
    flex: 1;
-   border-bottom: 1px solid rgba(18, 120, 255, 0.8);
+   border-bottom: 2px solid rgb(93, 163, 255);
+}
+.dark_mode_system_message::before, .dark_mode_system_message::after {
+   border-bottom: 2px solid rgb(219, 16, 255) !important;
 }
 .system_message::before {
    margin: 0 .5em;

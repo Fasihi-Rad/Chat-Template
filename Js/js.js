@@ -92,6 +92,8 @@ $(document).ready(function () {
    $(".message_input").css({ color: "#f2e6ff" });
    $(".message_input").addClass("dark_mode_message_input");
    $(".message").addClass("dark_mode_message");
+   $(".system_message").addClass("dark_mode_system_message");
+
 
    $(document).on("click", ".dark_mode_btn", function () {
       if (darkMod === false) {
@@ -110,6 +112,7 @@ $(document).ready(function () {
          $(".message_input").css({ color: "#f2e6ff" });
          $(".message_input").addClass("dark_mode_message_input");
          $(".message").addClass("dark_mode_message");
+         $(".system_message").addClass("dark_mode_system_message");
          alert("Dark Mod Activated");
          darkMod = true;
       } else if (darkMod === true) {
@@ -127,6 +130,7 @@ $(document).ready(function () {
          $(".message_input").removeClass("dark_mode_message_input");
          alert("Light Mod Activated");
          $(".message").removeClass("dark_mode_message");
+         $(".system_message").removeClass("dark_mode_system_message");
          darkMod = false;
       }
    });
