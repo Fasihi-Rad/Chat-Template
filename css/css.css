@@ -3,6 +3,7 @@
 }
 
 body {
+   position: fixed;
    width: 100%;
    background-color: #edeff2;
    font-family: "Calibri", "Roboto", sans-serif;
@@ -10,7 +11,6 @@ body {
 
 .chat_window {
    width: 100vw;
-
    height: 100vh;
    border-radius: 10px;
    background-color: #fff;
@@ -298,4 +298,28 @@ body {
       border-radius: 50%;
    }
 
+}
+
+
+.system_message_template{
+   display: none;
+}
+.system_message {
+   display: flex;
+   align-items: center;
+   text-align: center;
+   color: gray;
+   font-size: .9rem;
+   
+}
+.system_message::before, .system_message::after {
+   content: '';
+   flex: 1;
+   border-bottom: 1px solid rgba(18, 120, 255, 0.8);
+}
+.system_message::before {
+   margin: 0 .5em;
+}
+.system_message::after {
+   margin: 0 .4em;
 }
