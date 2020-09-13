@@ -73,7 +73,7 @@
       });
       $(".message_input").keyup(function (e) {
          if (e.which === 13) {
-            // return sendMessage(getMessageText());
+            // return getMessage(getMessageText());
             return userMaker()
          }
       });
@@ -94,6 +94,9 @@ $(document).ready(function () {
    $(".message_input").addClass("dark_mode_message_input");
    $(".message").addClass("dark_mode_message");
    $(".system_message").addClass("dark_mode_system_message");
+   $(".send_message").addClass("dark_mode_send_message");
+   $(".dark_mode_send_message").removeClass("send_message");
+   $(".users_tab").addClass("dark_mode");
 
 
    $(document).on("click", ".dark_mode_btn", function () {
@@ -114,8 +117,11 @@ $(document).ready(function () {
          $(".message_input").addClass("dark_mode_message_input");
          $(".message").addClass("dark_mode_message");
          $(".system_message").addClass("dark_mode_system_message");
-         alert("Dark Mod Activated");
+         $(".send_message").addClass("dark_mode_send_message");
+         $(".dark_mode_send_message").removeClass("send_message");
+         $(".users_tab").addClass("dark_mode");
          darkMod = true;
+
       } else if (darkMod === true) {
          $("#dark_mode_btn").css({ color: "#65598A" });
          $(".top_menu").removeClass("dark_mode");
@@ -129,9 +135,12 @@ $(document).ready(function () {
          );
          $(".message_input").css({ color: "gray" });
          $(".message_input").removeClass("dark_mode_message_input");
-         alert("Light Mod Activated");
          $(".message").removeClass("dark_mode_message");
          $(".system_message").removeClass("dark_mode_system_message");
+         $(".dark_mode_send_message").addClass("send_message");
+         $(".send_message").removeClass("dark_mode_send_message");
+         $(".users_tab").removeClass("dark_mode");
+
          darkMod = false;
       }
    });
