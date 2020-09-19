@@ -82,7 +82,8 @@
 
 $(document).ready(function () {
    var darkMod = true;
-   $("#dark_mode_btn").css({ color: "white" });
+   var userTab = true;
+   $(".dark_mode_btn").css({ color: "white" });
    $(".top_menu").addClass("dark_mode");
    $(".bottom_wrapper").addClass("dark_mode");
    $(".messages").addClass("dark_mode_messages");
@@ -98,10 +99,26 @@ $(document).ready(function () {
    $(".dark_mode_send_message").removeClass("send_message");
    $(".users_tab").addClass("dark_mode");
 
-
-   $(document).on("click", ".dark_mode_btn", function () {
+   $(document).on("click", "#user_tab_btn", function () {
+      if (userTab === false){
+         $('.users_tab').css({'width': '400px' ,'min-width': '250px'});
+         $("#user_tab_btn").removeClass("fa-bars");
+         $("#user_tab_btn").addClass("fa-times");
+         
+         userTab = true;
+      }
+      else{
+         $('.users_tab').css({'width': '0' ,'min-width': '0'});
+         $("#user_tab_btn").removeClass("fa-times");
+         $("#user_tab_btn").addClass("fa-bars");
+         userTab = false;
+      }
+      
+   })
+   
+   $(document).on("click", "#dark_mode_btn", function () {
       if (darkMod === false) {
-         $("#dark_mode_btn").css({ color: "white" });
+         $(".dark_mode_btn").css({ color: "white" });
          $(".top_menu").addClass("dark_mode");
          $(".bottom_wrapper").addClass("dark_mode");
          $(".messages").addClass("dark_mode_messages");
@@ -123,7 +140,7 @@ $(document).ready(function () {
          darkMod = true;
 
       } else if (darkMod === true) {
-         $("#dark_mode_btn").css({ color: "#65598A" });
+         $(".dark_mode_btn").css({ color: "#65598A" });
          $(".top_menu").removeClass("dark_mode");
          $(".bottom_wrapper").removeClass("dark_mode");
          $(".messages").removeClass("dark_mode_messages");
