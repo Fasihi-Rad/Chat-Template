@@ -28,16 +28,18 @@ body {
    font-family: "Calibri", "Roboto", sans-serif;
 }
 
-.chat_window {
-   flex-basis: 100vw;
-   height: 100vh;
-   border-top-right-radius: 10px;
-   border-bottom-right-radius: 10px;
-   left: 0;
-   top: 0;
-   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-   background-color: #f8f8f8;
-   overflow: hidden;
+@media (min-width: 501px) {
+   .chat_window {
+      flex-basis: 100vw;
+      height: 100vh;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      left: 0;
+      top: 0;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      background-color: #f8f8f8;
+      overflow: hidden;
+   }
 }
 
 .top_menu {
@@ -187,6 +189,7 @@ body {
 .messages .message .text_wrapper .text {
    font-size: 1.1rem;
    font-weight: 300;
+   word-break: break-word;
 }
 
 .bottom_wrapper {
@@ -422,18 +425,56 @@ body {
 .system_message::after {
    margin: 0 0.4em;
 }
+@media (min-width: 501px) {
+   .users_tab {
+      display: flex;
+      flex-direction: column;
+      z-index: -1;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      overflow: hidden;
+      background-color: #f8f8f8;
+      width: 400px;
+      min-width: 280px;
+      transform: translateX(0) !important;
+      transition: 300ms ease-in-out;
+   }
+}
 
-.users_tab {
-   display: flex;
-   flex-direction: column;
-   z-index: -1;
-   display: inline-block;
-   border-top-left-radius: 10px;
-   border-bottom-left-radius: 10px;
-   overflow: hidden;
-   background-color: #f8f8f8;
-   width: 400px;
-   min-width: 280px ;
+@media (max-width: 500px) {
+   .users_tab {
+      display: inline-block;
+      z-index: 1;
+      position: absolute;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      overflow: hidden;
+      background-color: #f8f8f8;
+      width: 250px !important;
+      min-width: 250px !important;
+      height: 100vh;
+      transform: translateX(-100%);
+      transition: 300ms ease-in-out;
+   }
+   body {
+      display: block;
+      position: fixed;
+      width: 100%;
+      background-color: #edeff2;
+      font-family: "Calibri", "Roboto", sans-serif;
+   }
+   .chat_window {
+      display: inline-block;
+      height: 100vh;
+      border-radius: 10px;
+      left: 0;
+      top: 0;
+      right: 0;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      background-color: #f8f8f8;
+      overflow: hidden;
+      position: fixed;
+   }
 }
 
 .user_tab.dark_mode {

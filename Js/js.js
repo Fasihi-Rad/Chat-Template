@@ -74,15 +74,14 @@
       $(".message_input").keyup(function (e) {
          if (e.which === 13) {
             // return getMessage(getMessageText());
-            return userMaker()
+            return userMaker();
          }
       });
    });
 }.call(this));
 
 $(document).ready(function () {
-   var darkMod = true;
-   var userTab = true;
+   let darkMod = true;
    $(".dark_mode_btn").css({ color: "white" });
    $(".top_menu").addClass("dark_mode");
    $(".bottom_wrapper").addClass("dark_mode");
@@ -99,24 +98,8 @@ $(document).ready(function () {
    $(".dark_mode_send_message").removeClass("send_message");
    $(".users_tab").addClass("dark_mode");
 
-   $(document).on("click", "#user_tab_btn", function () {
-      if (userTab === false){
-         $('.users_tab').css({'width': '400px' ,'min-width': '250px'});
-         $("#user_tab_btn").removeClass("fa-bars");
-         $("#user_tab_btn").addClass("fa-times");
-         
-         userTab = true;
-      }
-      else{
-         $('.users_tab').css({'width': '0' ,'min-width': '0'});
-         $("#user_tab_btn").removeClass("fa-times");
-         $("#user_tab_btn").addClass("fa-bars");
-         userTab = false;
-      }
-      
-   })
-   
    $(document).on("click", "#dark_mode_btn", function () {
+      console.log("it work");
       if (darkMod === false) {
          $(".dark_mode_btn").css({ color: "white" });
          $(".top_menu").addClass("dark_mode");
@@ -138,7 +121,6 @@ $(document).ready(function () {
          $(".dark_mode_send_message").removeClass("send_message");
          $(".users_tab").addClass("dark_mode");
          darkMod = true;
-
       } else if (darkMod === true) {
          $(".dark_mode_btn").css({ color: "#65598A" });
          $(".top_menu").removeClass("dark_mode");
@@ -163,20 +145,66 @@ $(document).ready(function () {
    });
 });
 
-userMaker = function(){
-   var $user ;
-   var $users = $('.users')
+userMaker = function () {
+   var $user;
+   var $users = $(".users");
    $user = $($(".user_template").clone().html());
-   $(".users").append($user); 
-   return $user.addClass("appeared")
-}
+   $(".users").append($user);
+   return $user.addClass("appeared");
+};
 
-$(window).resize(function() {
-   var width = $(window).width();
-   if (width < 501){
-      $('#send_btn_txt').hide()
+let userTab = true;
+let mobileUserTab = false;
+$(window).width(function () {
+   let width = $(window).width();
+   if (width < 501) {
+      $("#send_btn_txt").hide();
+      $("#user_tab_btn").removeClass("fa-times");
+      $("#user_tab_btn").addClass("fa-bars");
+   } else {
+      $("#send_btn_txt").show();
    }
-   else{
-      $('#send_btn_txt').show()
+});
+
+$(window).resize(function () {
+   let width = $(window).width();
+   if (width < 501) {
+      userTab = false;
+      $("#send_btn_txt").hide();
+      $("#user_tab_btn").removeClass("fa-times");
+      $("#user_tab_btn").addClass("fa-bars");
+   } else {
+      $("#send_btn_txt").show();
    }
- });
+});
+
+$("#user_tab_btn").click(function () {
+   let width = $(window).width();
+   if (width < 501) {
+      if (mobileUserTab === false) {
+         $(".users_tab").css({ transform: "translateX(0)" });
+         $(".users_tab").addClass("shadow");
+         mobileUserTab = true;
+      }
+   } else {
+      if (userTab === false) {
+         $(".users_tab").css({ width: "400px", "min-width": "250px" });
+         $("#user_tab_btn").removeClass("fa-bars");
+         $("#user_tab_btn").addClass("fa-times");
+         userTab = true;
+      } else {
+         $(".users_tab").css({ width: "0", "min-width": "0" });
+         $("#user_tab_btn").removeClass("fa-times");
+         $("#user_tab_btn").addClass("fa-bars");
+         userTab = false;
+      }
+   }
+});
+
+$(".chat_window").mouseup(function () {
+   if (mobileUserTab === true) {
+      $(".users_tab").css({ transform: "translateX(-100%)" });
+      $(".users_tab").removeClass("shadow");
+      mobileUserTab = false;
+   }
+});
