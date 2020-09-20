@@ -183,7 +183,7 @@ $("#user_tab_btn").click(function () {
    if (width < 501) {
       if (mobileUserTab === false) {
          $(".users_tab").css({ transform: "translateX(0)" });
-         $(".users_tab").addClass("shadow");
+         $(".users_tab").addClass("user_tab_shadow");
          mobileUserTab = true;
       }
    } else {
@@ -204,7 +204,7 @@ $("#user_tab_btn").click(function () {
 $(".chat_window").mouseup(function () {
    if (mobileUserTab === true) {
       $(".users_tab").css({ transform: "translateX(-100%)" });
-      $(".users_tab").removeClass("shadow");
+      $(".users_tab").removeClass("user_tab_shadow");
       mobileUserTab = false;
    }
 });

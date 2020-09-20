@@ -525,7 +525,7 @@ body {
    position: relative;
    margin: 0;
    direction: rtl;
-   background-color: #f8f8f8;
+   background-color: #f5f9ff;
    transition: 200ms ease-in-out;
 }
 .dark_mode.users_tab .users {
@@ -542,7 +542,7 @@ body {
    transition: 200ms ease-in-out;
 }
 .dark_mode.users_tab .user {
-   background-color: #531a95;
+   background-color: #3d4e86;
    color: white !important;
 }
 .users_tab .users .user:hover {
@@ -598,4 +598,7 @@ body {
    margin: 0;
    border-radius: 0;
    background-color: transparent !important;
+}
+.user_tab_shadow{
+   box-shadow: 5px 15px 30px 5px rgba(0, 0, 0, 0.3);
 }
