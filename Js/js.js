@@ -1,9 +1,37 @@
+
+
+
 (function () {
+   const textDirection = function(text, id){
+      // console.log(text, id)
+      let textNoSpace = text.replace(/ /g, "");
+      const langdic = {
+                 "arabic" : /[\u0600-\u06FF]/,
+                 "persian" : /[\u0750-\u077F]/,
+                 "Hebrew" : /[\u0590-\u05FF]/,
+                 "Syriac" : /[\u0700-\u074F]/,
+                 "Bengali" : /[\u0980-\u09FF]/,
+                 "Ethiopic" : /[\u1200-\u137F]/,
+                 "Greek and Coptic" : /[\u0370-\u03FF]/,
+                 "Georgian" : /[\u10A0-\u10FF]/,
+                 "Thai" : /[\u0E00-\u0E7F]/,
+                 "english" : /^[a-zA-Z]+$/
+                   //add other languages her
+               }
+         const keys = Object.entries(langdic);
+         Object.entries(langdic).forEach(([key, value]) => {  
+            if (value.test(textNoSpace) == true){
+               console.log(`#${id}`)
+               return key === "arabic" ? $(`#${id}`).css({'text-align': 'end'}) : $(`#${id}`).css({'text-align': 'star'}); 
+            }
+         });
+   }
    var Message;
    Message = function (arg) {
       (this.text = arg.text), (this.message_side = arg.message_side);
       this.draw = (function (_this) {
          return function () {
+            const messageId = uuidv4()
             var $message;
             $message = $($(".message_template").clone().html());
             $message
@@ -13,6 +41,8 @@
             $message.find(".timestape").html("1111111");
             $message.find(".username").html("Ali");
             $message.find(".user_role").html("Admin");
+            $message.find(".text").attr('id', messageId);
+            textDirection(_this.text, messageId)
             $(".messages").append($message);
             return setTimeout(function () {
                return $message.addClass("appeared");
@@ -69,6 +99,7 @@
       };
 
       $(".send_message").click(function (e) {
+         
          return sendMessage(getMessageText());
       });
       $(".message_input").keyup(function (e) {
@@ -208,3 +239,30 @@ $(".chat_window").mouseup(function () {
       mobileUserTab = false;
    }
 });
+
+$('.message_input').keypress(function(){
+   let text = $(this).val().replace(/ /g, "");
+   const langdic = {
+              "arabic" : /[\u0600-\u06FF]/,
+              "persian" : /[\u0750-\u077F]/,
+              "Hebrew" : /[\u0590-\u05FF]/,
+              "Syriac" : /[\u0700-\u074F]/,
+              "Bengali" : /[\u0980-\u09FF]/,
+              "Ethiopic" : /[\u1200-\u137F]/,
+              "Greek and Coptic" : /[\u0370-\u03FF]/,
+              "Georgian" : /[\u10A0-\u10FF]/,
+              "Thai" : /[\u0E00-\u0E7F]/,
+              "english" : /^[a-zA-Z]+$/
+                //add other languages her
+            }
+      //const keys = Object.keys(langdic); //read  keys
+      //const keys = Object.values(langdic); //read  values
+      const keys = Object.entries(langdic); // read  keys and values from the dictionary
+      Object.entries(langdic).forEach(([key, value]) => {  // loop to read all the dictionary items if not true
+         if (value.test(text) == true){   //Check Unicode to see which one is true
+            console.log(key)
+            return key === "arabic" ? $(this).css({'direction': 'rtl'}) : $(this).css({'direction': 'ltr'}); 
+         }
+      });
+})
+

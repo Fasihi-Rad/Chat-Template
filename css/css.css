@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+
 * {
    box-sizing: border-box;
+   font-family: 'Salsa', cursive;
 }
-
 ::-webkit-scrollbar {
    width: 5px;
 }
@@ -25,7 +27,6 @@ body {
    position: fixed;
    width: 100%;
    background-color: #edeff2;
-   font-family: "Calibri", "Roboto", sans-serif;
 }
 
 @media (min-width: 501px) {
@@ -362,6 +363,7 @@ body {
 }
 .message_input {
    background-color: transparent !important;
+   direction: ltr;
 }
 .dark_mode_message_input_wrapper:hover {
    box-shadow: 4px 4px 6px 0 rgba(144, 106, 204, 0.3),
@@ -372,6 +374,11 @@ body {
 .dark_mode_message_input::placeholder {
    color: #f2e6ff !important;
    transition: 200ms ease-in-out;
+   direction: ltr !important;
+   
+}
+.message_input::placeholder {
+   direction: ltr !important;
 }
 
 .dark_mode_btn {
@@ -462,7 +469,6 @@ body {
       position: fixed;
       width: 100%;
       background-color: #edeff2;
-      font-family: "Calibri", "Roboto", sans-serif;
    }
    .chat_window {
       display: inline-block;
@@ -590,6 +596,7 @@ body {
 
 .user_info .user_last_seen {
    margin: 0;
+   font-size: .8rem;
 }
 .user_template {
    display: none;
