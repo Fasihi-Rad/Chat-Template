@@ -78,6 +78,7 @@ body {
    text-align: center;
    color: #bcbdc0;
    font-size: 20px;
+   font-weight: bold;
 }
 
 .messages {
@@ -502,9 +503,17 @@ body {
 
 .top.field {
    box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
-   text-align: center;
-   color: #959697;
+   
+}
+.top.field .title{
    font-weight: bold;
+   color: #bcbdc0;
+   align-self: center;
+   white-space: nowrap;
+   margin: auto;
+   text-align: center;
+   color: #bcbdc0;
+   font-size: 20px;
 }
 
 .users_tab .users {
