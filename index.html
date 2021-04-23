@@ -1,96 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./css/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="./css/css.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/00f529052d.js" crossorigin="anonymous"></script>
-    <title>Secret Dark Chat</title>
+    <title>Chat</title>
 </head>
+
 <body>
-  
-  <div class="users_tab">
-    <div class="top field">
-      <div class="title">Users</div>
-    </div>
-    <ul class='users'>
-    </ul>
-    <div class="clearfix down field ">
-      <div class='user me'>
-        <div class='avatar_filde me'>
-          <div class='avatar'></div>
+
+    <div class="users_tab">
+        <div class="top field">
+            <div class="title">Users</div>
         </div>
-          <div class='user_info me'>
-            <div class='user_info_head me'>
-              <div class='username me'>Amir</div>
-              <div class='user_online_status me'>online</div>
+        <ul class='users'>
+        </ul>
+        <div class="clearfix down field">
+            <div class='user me'>
+                <div class='avatar_filde me'>
+                    <div class='avatar'></div>
+                </div>
+                <div class='user_info me'>
+                    <div class='user_info_head me'>
+                        <div class='username me'>Amir</div>
+                        <div class='user_online_status me'>online</div>
+                    </div>
+                    <p class='user_last_seen me'>9:00 pm</p>
+                </div>
             </div>
-              <p class='user_last_seen me'>9:00 pm</p>
-          </div>
         </div>
     </div>
-  </div>
 
-  <div class="chat_window">
-    <div class="top_menu">
-        <div class="buttons">
-            
-            <div class="button dark_mode_btn"><i id='user_tab_btn'  class="fas fa-times"></i></div>
-            <div class="button dark_mode_btn"><i id='dark_mode_btn' class="fas fa-moon"></i></div>
-            
+    <div class="chat_window">
+        <div class="top_menu">
+            <div class="buttons">
+
+                <div class="button dark_mode_btn"><i id='user_tab_btn' class="fas fa-times"></i></div>
+                <div class="button dark_mode_btn"><i id='dark_mode_btn' class="fas fa-moon"></i></div>
+
+            </div>
+            <div class="title">Chat</div>
         </div>
-        <div class="title">Secret Chat</div>
+        <ul class="messages">
+        </ul>
+        <div class="bottom_wrapper clearfix">
+            <div class="message_input_wrapper">
+                <input class="message_input" placeholder="Type your message here..." />
+            </div>
+            <div class="send_message">
+                <div class="text"><i class="fas fa-paper-plane"></i><span id="send_btn_txt">Send</span></div>
+            </div>
+        </div>
     </div>
-    <ul class="messages">
-    </ul>
-    <div class="bottom_wrapper clearfix">
-        <div class="message_input_wrapper">
-            <input class="message_input" placeholder="Type your message here..." />
-        </div>
-        <div class="send_message">
-            <div class="text" ><i class="fas fa-paper-plane"></i><span id="send_btn_txt">Send</span></div>
-        </div>
+
+    <div class="message_template">
+        <li class="message">
+            <div class="avatar"></div>
+            <div class="text_wrapper">
+                <div class='text_wrapper_header'>
+                    <div class="user_role"></div>
+                    <div class="username"></div>
+                </div>
+                <p class="text"></p>
+                <div class="timestape">9:31 PM</div>
+            </div>
+        </li>
     </div>
-  </div>
 
-  <div class="message_template">
-    <li class="message">
-        <div class="avatar"></div>
-        <div class="text_wrapper">
-          <div class='text_wrapper_header'>
-            <div class="user_role"></div>
-            <div class="username"></div>
-          </div>
-            <p class="text"></p>
-            <div class="timestape"></div>
-        </div>
-    </li>
-  </div>
-
-  <div class='system_message_template'>
-    <li><div class="system_message">Next section</div></li>
-  </div>
-
-  <div class='user_template'>
-    <li class='user'>
-    <div class='avatar_filde'>
-      <div class='avatar'></div>
+    <div class='system_message_template'>
+        <li>
+            <div class="system_message">Next section</div>
+        </li>
     </div>
-      <div class='user_info'>
-        <div class='user_info_head'>
-          <div class='username'>Amir</div>
-          <div class='user_online_status'>online</div>
-        </div>
-          <p class='user_last_seen '>9:00 pm</p>
-      </div>
-    </li>
-  </div>
+
+    <div class='user_template'>
+        <li class='user'>
+            <div class='avatar_filde'>
+                <div class='avatar'></div>
+            </div>
+            <div class='user_info'>
+                <div class='user_info_head'>
+                    <div class='username'>Amir</div>
+                    <div class='user_online_status'>online</div>
+                </div>
+                <p class='user_last_seen'>9:00 PM</p>
+            </div>
+        </li>
+    </div>
 
 
-  <script type="text/javascript" src="./Js/jQuery/jquery.min.js"></script>
-  <script type="text/javascript" src="./Js/uuid/uuid.js"></script>
-  <script type="text/javascript" src='./Js/bootstrap/bootstrap.min.js'></script>
-  <script type="text/javascript" src='./Js/js.js'></script>
+    <script type="text/javascript" src="./Js/jQuery/jquery.min.js"></script>
+    <script type="text/javascript" src="./Js/uuid/uuid.js"></script>
+    <script type="text/javascript" src='./Js/bootstrap/bootstrap.min.js'></script>
+    <script type="text/javascript" src='./Js/js.js'></script>
 </body>
+
 </html>
