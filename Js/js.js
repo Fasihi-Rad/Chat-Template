@@ -25,7 +25,7 @@
     }
     var Message;
     Message = function(arg) {
-        (this.text = arg.text), (this.message_side = arg.message_side);
+        (this.text = arg.text), (this.message_side = arg.message_side), (this.user = arg.user);
         this.draw = (function(_this) {
             return function() {
                 const messageId = uuidv4()
@@ -36,7 +36,7 @@
                     .find(".text")
                     .html(_this.text);
                 $message.find(".timestape").html("9:31 PM");
-                $message.find(".username").html("Ali");
+                $message.find(".username").html(_this.user);
                 $message.find(".user_role").html("Admin");
                 $message.find(".text").attr('id', messageId);
                 textDirection(_this.text, messageId)
@@ -67,6 +67,7 @@
             message = new Message({
                 text: text,
                 message_side: message_side,
+                user: "Amir",
             });
             message.draw();
             return $messages.animate({ scrollTop: $messages.prop("scrollHeight") },
@@ -86,6 +87,7 @@
             message = new Message({
                 text: text,
                 message_side: message_side,
+                user: "Ali",
             });
             message.draw();
             return $messages.animate({ scrollTop: $messages.prop("scrollHeight") },
